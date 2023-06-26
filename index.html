@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Increment</title>
+
+	<style>
+		body {
+			padding: 24px;
+		}
+
+		#reset {
+			padding: 12px;
+			font-size: 20px;
+		}
+
+		#counter {
+			display: block;
+			font-size: 48px;
+			margin: 24px 0;
+		}
+
+		.math button {
+			display: inline-block;
+			padding: 20px;
+			margin-right: 12px;
+			font-size: 32px;
+		}
+
+		#subtract {
+			background-color: #ff9090;
+		}
+
+		#add {
+			background-color: #90ff92;
+		}
+	</style>
+</head>
+
+<body>
+
+	<button id="reset">Reset</button>
+
+	<span id="counter">0</span>
+
+	<div class="math">
+		<button id="subtract">-</button>
+		<button id="add">+</button>
+	</div>
+
+	<script>
+		let counter = 0;
+
+		const counterDisplay = document.getElementById('counter')
+		const addButton = document.getElementById('add')
+		const subtractButton = document.getElementById('subtract')
+		const resetButton = document.getElementById('reset')
+
+		function updateCounter(value) {
+			counter = value
+			counterDisplay.innerText = counter;
+		}
+
+		addButton.addEventListener('click', e => {
+			updateCounter(++counter)
+		})
+
+		subtractButton.addEventListener('click', e => {
+			updateCounter(--counter)
+		})
+
+		resetButton.addEventListener('click', e => {
+			updateCounter(0)
+		})
+	</script>
+</body>
+
+</html>
